@@ -2,17 +2,18 @@ var mongoose = require('mongoose');
 
 mongoose.connect("mongodb://localhost/blubber_app");
 
+var User = require("./models/User")
 
-//schema
-var userSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  email: { type: String, required: true },
-  moderator: { type: Boolean, default: false }
-});
+// //schema
+// var userSchema = new mongoose.Schema({
+//   name: { type: String, required: true },
+//   email: { type: String, required: true },
+//   moderator: { type: Boolean, default: false }
+// });
 
 
-//model
-var User = mongoose.model("User", userSchema);
+// //model
+// var User = mongoose.model("User", userSchema);
 
 User.remove({}, function(err, results){
   User.create([
